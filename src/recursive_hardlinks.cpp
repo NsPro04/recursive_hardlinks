@@ -67,7 +67,7 @@ void select_and_copy() {
 		const auto time_start = std::chrono::system_clock::now();
 		for (const std::filesystem::path& dir : dirs) {
 			const std::filesystem::path subdir_path = destination_dir / source_dir.filename() / dir.lexically_relative(source_dir);
-			std::cout << "The directory will be created: " << subdir_path << std::endl;
+			std::cout << "The directory will be created: " << wstr2str(subdir_path) << std::endl;
 
 			std::filesystem::create_directory(subdir_path);
 
